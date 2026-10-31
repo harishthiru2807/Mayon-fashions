@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8ef">
+  <meta name="description" content="Shop thoughtfully handmade Indian crafts, jewellery and home decor at Mayon Fastions.">
+  <title>Mayon Fastions — Handmade with Love</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement"><span>✦</span> A little love in every order <span class="announcement-divider">|</span> Free shipping on orders above ₹999</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Mayon Fastions home">
+      <span class="brand-mark">m<span>✳</span></span>
+      <span class="brand-name">mayon <b>fastions</b><small>HANDMADE · HEARTFELT · HOMEGROWN</small></span>
+    </a>
+    <button class="mobile-menu icon-button" id="mobileMenu" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#shop">Explore</a>
+      <a class="nav-link" href="#categories">Categories</a>
+      <a class="nav-link" href="#offers">Offers</a>
+      <a class="nav-link" href="#story">Our Story</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button search-trigger" id="searchFocus" aria-label="Search">⌕</button>
+      <button class="icon-button" id="wishlistOpen" aria-label="Open wishlist">♡<span class="action-count" id="wishlistCount">0</span></button>
+      <button class="icon-button cart-trigger" id="cartOpen" aria-label="Open cart">♧<span class="action-count" id="cartCount">0</span></button>
+      <button class="account-button" id="accountOpen">Sign in</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> MADE SLOW. LOVED FOREVER.</div>
+        <h1>Discover the beauty<br>of <em>handmade</em> creations.</h1>
+        <p>Unique handmade treasures, thoughtfully crafted with love and tradition.</p>
+        <div class="hero-buttons">
+          <a class="button button-primary" href="#shop">Explore collection <span>↗</span></a>
+          <a class="button button-text" href="#shop" data-filter="bestseller">Shop bestsellers <span>→</span></a>
+        </div>
+        <div class="hero-note"><span class="avatar-stack"><i>✿</i><i>♡</i><i>✦</i></span><span><b>Made by hand,</b> cherished by you</span></div>
+      </div>
+      <div class="hero-art" role="img" aria-label="Handmade pottery and flowers in a sunlit studio">
+        <div class="hero-art-image"></div>
+        <div class="hero-sticker"><span>✳</span><b>Handmade<br>with love</b></div>
+        <div class="hero-caption"><span>01 / 03</span><i></i><span>THE ART OF SLOW LIVING</span></div>
+      </div>
+      <div class="hero-side-note">CRAFTED WITH TRADITION · SINCE ALWAYS</div>
+    </section>
+
+    <section class="search-section" aria-label="Find handmade products">
+      <div class="search-intro"><span class="eyebrow">YOUR NEXT TREASURE AWAITS</span><h2>Find something <em>lovely.</em></h2></div>
+      <div class="search-box-wrap">
+        <span class="search-symbol">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search crafts, gifts, decorations..." autocomplete="off" aria-label="Search products">
+        <button id="clearSearch" class="clear-search" aria-label="Clear search">×</button>
+        <button id="searchButton" class="search-button">Search <span>→</span></button>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+      </div>
+      <div class="popular-searches"><span>Popular:</span><button data-query="jewellery">jewellery</button><button data-query="wall hanging">wall hangings</button><button data-query="gift">gifts</button></div>
+    </section>
+
+    <section class="category-section section-wrap" id="categories">
+      <div class="section-heading">
+        <div><span class="eyebrow">A WORLD OF WONDER</span><h2>Shop by <em>craft</em></h2></div>
+        <a class="text-link" href="#shop">View all categories <span>→</span></a>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="shop-section section-wrap" id="shop">
+      <div class="section-heading shop-heading">
+        <div><span class="eyebrow">THOUGHTFULLY MADE, READY FOR YOU</span><h2>Little things, <em>big joy.</em></h2></div>
+        <div class="view-toggle" aria-label="Product view">
+          <button class="view-button selected" id="gridView" aria-label="Grid view">▦</button>
+          <button class="view-button" id="listView" aria-label="List view">☷</button>
+        </div>
+      </div>
+      <div class="shop-toolbar">
+        <div class="filter-pills" id="filterPills">
+          <button class="filter-pill selected" data-filter="all">All treasures</button>
+          <button class="filter-pill" data-filter="bestseller">Bestsellers</button>
+          <button class="filter-pill" data-filter="new">New arrivals</button>
+          <button class="filter-pill" data-filter="under500">Under ₹500</button>
+        </div>
+        <label class="sort-label">Sort by
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="popular">Most loved</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+            <option value="rating">Top rated</option>
+            <option value="newest">Newest first</option>
+          </select>
+        </label>
+      </div>
+      <div class="shop-layout">
+        <aside class="filter-sidebar">
+          <div class="filter-block"><h3>Categories</h3><div id="categoryFilters" class="category-filters"></div></div>
+          <div class="filter-block"><h3>Price range</h3><div class="range-label"><span>₹<span id="minPriceLabel">0</span></span><span>Up to ₹<span id="maxPriceLabel">1500</span></span></div><input id="priceRange" type="range" min="100" max="1500" value="1500" step="50"></div>
+          <div class="filter-block"><h3>Refine your finds</h3><label class="check-row"><input type="checkbox" id="ratingFilter"><span>★★★★☆ & up</span></label><label class="check-row"><input type="checkbox" id="stockFilter"><span>In stock only</span></label></div>
+          <button id="resetFilters" class="reset-button">Clear all filters</button>
+        </aside>
+        <div class="products-area">
+          <div class="results-line"><span id="resultsCount">Showing all treasures</span><span class="handmade-note">✳ Each one made by hand</span></div>
+          <div class="product-grid" id="productGrid"></div>
+          <div class="empty-state hidden" id="emptyState"><span>✿</span><h3>No treasures found</h3><p>Try a different search or clear your filters.</p><button class="button button-primary" id="emptyReset">Clear filters</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer-banner section-wrap" id="offers">
+      <div class="offer-decoration">✳</div>
+      <div class="offer-copy"><span class="eyebrow">A LITTLE SOMETHING FOR YOU</span><h2>First order, <em>first love.</em></h2><p>Take 10% off your first order. A lovely excuse to bring home something handmade.</p><div class="coupon-chip"><span>YOUR CODE</span><b>MAYON10</b><button class="copy-code" data-code="MAYON10">Copy code</button></div></div>
+      <div class="offer-right"><div class="offer-flower">✿</div><span>10%</span><small>OFF YOUR<br>FIRST ORDER</small><span class="offer-sparkle">✦</span></div>
+    </section>
+
+    <section class="story-section section-wrap" id="story">
+      <div class="story-photo"><div class="story-image"></div><div class="story-stamp">MADE WITH<br><b>♥</b><br>INTENTION</div></div>
+      <div class="story-copy"><span class="eyebrow">A NOTE FROM OUR LITTLE STUDIO</span><h2>Crafted with care.<br><em>Kept close to heart.</em></h2><p>Mayon Fastions celebrates the beauty of handmade craftsmanship. Every creation reflects creativity, dedication, and the love of traditional art. We bring one-of-a-kind pieces closer to you while celebrating the hands and stories behind them.</p><a class="text-link" href="#footer">A little more about us <span>→</span></a><div class="story-stats"><div><b>100%</b><span>HANDMADE</span></div><div><b>20+</b><span>LOVELY FINDS</span></div><div><b>♥</b><span>MADE WITH CARE</span></div></div></div>
+    </section>
+
+    <section class="reviews-section section-wrap">
+      <div class="section-heading"><div><span class="eyebrow">KIND WORDS, FROM KIND HEARTS</span><h2>Made theirs. <em>Loved lots.</em></h2></div><span class="handmade-note">★★★★★ &nbsp; 4.9 from our lovely customers</span></div>
+      <div class="review-grid">
+        <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>“The little details are even more beautiful in person. You can feel the care in every knot.”</blockquote><div class="review-person"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=75" alt="" loading="lazy"><div><b>Ananya S.</b><small>Macrame Wall Hanging · Jaipur</small></div></div></article>
+        <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>“Such a thoughtful gift. It arrived beautifully packed and my sister absolutely adored it.”</blockquote><div class="review-person"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=75" alt="" loading="lazy"><div><b>Rohan M.</b><small>Handmade Gift Hamper · Pune</small></div></div></article>
+        <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>“I love that it’s handmade and one of a kind. The colours make my room feel so much warmer.”</blockquote><div class="review-person"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=75" alt="" loading="lazy"><div><b>Meera K.</b><small>Decorative Clay Pot · Kochi</small></div></div></article>
+      </div>
+    </section>
+
+    <section class="promise-strip">
+      <div><span>✿</span><b>Made by hand</b><small>One of a kind, always</small></div>
+      <div><span>♧</span><b>Thoughtful materials</b><small>Kind to home and earth</small></div>
+      <div><span>♡</span><b>Gifting made lovely</b><small>Little joys, beautifully wrapped</small></div>
+      <div><span>↗</span><b>Free shipping</b><small>On orders above ₹999</small></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="footer-main">
+      <div class="footer-brand"><a class="brand footer-logo" href="#"><span class="brand-mark">m<span>✳</span></span><span class="brand-name">mayon <b>fastions</b><small>HANDMADE · HEARTFELT · HOMEGROWN</small></span></a><p>Handmade with love,<br>crafted with tradition.</p><div class="social-links"><a href="#footer" aria-label="Instagram">ig</a><a href="#footer" aria-label="Pinterest">p</a><a href="#footer" aria-label="Facebook">f</a><a href="#footer" aria-label="WhatsApp">w</a></div></div>
+      <div class="footer-column"><h3>Explore</h3><a href="#shop">All treasures</a><a href="#categories">Shop by craft</a><a href="#offers">Special offers</a><a href="#story">Our story</a></div>
+      <div class="footer-column"><h3>Here to help</h3><a href="#footer">Shipping & returns</a><a href="#footer">Care guide</a><a href="#footer">FAQs</a><a href="mailto:hello@mayonfastions.example">Get in touch</a><button class="footer-admin-link" id="adminOpen">Studio demo</button></div>
+      <div class="newsletter"><h3>A little note from us</h3><p>New finds, thoughtful stories, and the occasional treat.</p><form id="newsletterForm"><label for="newsletterEmail" class="sr-only">Your email address</label><input id="newsletterEmail" type="email" placeholder="Your email address" required><button aria-label="Subscribe">→</button></form><small>By subscribing, you agree to our friendly updates.</small></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Mayon Fastions. Made with ♥ in India.</span><span>Privacy · Terms · We love handmade</span></div>
+  </footer>
+
+  <div class="scrim" id="scrim"></div>
+  <aside class="side-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">YOUR LITTLE COLLECTION</span><h2>Your bag <span id="drawerCartCount">(0)</span></h2></div><button class="close-button" data-close aria-label="Close cart">×</button></div>
+    <div class="shipping-progress"><p id="shippingMessage">Add something lovely to get started.</p><div><i id="shippingProgress"></i></div></div>
+    <div class="drawer-items" id="cartItems"></div>
+    <div class="drawer-bottom" id="cartBottom">
+      <div class="coupon-entry"><input id="couponInput" placeholder="Have a little code?" aria-label="Coupon code"><button id="applyCoupon">Apply</button></div>
+      <p class="coupon-message" id="couponMessage"></p>
+      <div class="totals-row"><span>Subtotal</span><b id="cartSubtotal">₹0</b></div>
+      <div class="totals-row"><span>Discount</span><b id="cartDiscount">− ₹0</b></div>
+      <div class="totals-row"><span>Delivery</span><b id="cartDelivery">₹0</b></div>
+      <div class="totals-row total"><span>Total</span><b id="cartTotal">₹0</b></div>
+      <button class="button button-primary checkout-button" id="checkoutOpen">Continue to checkout <span>→</span></button>
+      <small class="secure-note">A thoughtful little package, on its way to you.</small>
+    </div>
+  </aside>
+  <aside class="side-drawer wishlist-drawer" id="wishlistDrawer" aria-label="Wishlist" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">SAVED WITH LOVE</span><h2>Your wishlist</h2></div><button class="close-button" data-close aria-label="Close wishlist">×</button></div>
+    <div class="drawer-items" id="wishlistItems"></div>
+  </aside>
+
+  <div class="modal-layer" id="modalLayer" aria-hidden="true">
+    <section class="modal" id="productModal" role="dialog" aria-modal="true" aria-label="Product details"></section>
+    <section class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Checkout"></section>
+    <section class="modal account-modal" id="accountModal" role="dialog" aria-modal="true" aria-label="Sign in"></section>
+    <section class="modal order-modal" id="orderModal" role="dialog" aria-modal="true" aria-label="Order details"></section>
+    <section class="modal admin-modal" id="adminModal" role="dialog" aria-modal="true" aria-label="Studio demo dashboard"></section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
